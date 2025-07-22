@@ -62,7 +62,6 @@ ul, li {
       align-items: center;
       padding: 1rem 5;
       background-color: rgba(0, 0, 0, 0.8);  /* Optional: semi-transparent background */
-      z-index: 999;
   }
   
   header h1 {
@@ -84,6 +83,7 @@ ul, li {
       transition: color 0.2s ease;
       text-decoration: none;
       color: inherit;
+      z-index: 999;
   }
   
   nav a:hover {
@@ -100,6 +100,7 @@ ul, li {
       font-weight: 500;
       transition: background-color 0.2s ease;
       cursor: pointer;
+      z-index: 999;
   }
   
   .btn-signing:hover {
