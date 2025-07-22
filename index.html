@@ -3,10 +3,482 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <title>MCODE</title>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    ul, li {
+        list-style: none;
+    }
+      
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: black;
+        color: #e7e7e7;
+        min-height: 100vh;
+        line-height: 1.5;
+    }
+
+    /* GRADIENT AND LAYER BLUR EFFECT */
+    .image-gradient {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0.5;
+        z-index: -1;
+    }
+
+    .layer-blur {
+        height: 0;
+        width: 30rem;
+        position: absolute;
+        top: 20%;
+        right: 0;
+        box-shadow: 0 0 700px 15px white;
+        rotate: -30deg;
+        z-index: -1;
+    }
+
+    /* CONTAINER */
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* HEADER */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 3rem;
+        font-weight: 300;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin-left: -5%;
+    }
+
+    nav li {
+        display: inline-block;
+    }
+
+    nav a {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+        transition: color 0.2s ease;
+        text-decoration: none;
+        color: inherit;
+        z-index: 999;
+    }
+
+    nav a:hover {
+        color: #a7a7a7;
+    }
+
+    .btn-signing {
+        background-color: #a7a7a7;
+        color: black;
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+        border: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+        cursor: pointer;
+        z-index: 999;
+    }
+
+    .btn-signing:hover {
+        background-color: white;
+    }
+
+    /* Мобільне меню */
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #e7e7e7;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .mobile-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .mobile-nav.active {
+        display: flex;
+    }
+
+    .mobile-nav a {
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+        transition: color 0.2s ease;
+        text-decoration: none;
+        color: inherit;
+        padding: 1rem;
+    }
+
+    .mobile-nav a:hover {
+        color: #a7a7a7;
+    }
+
+    .mobile-nav .btn-signing {
+        background-color: #a7a7a7;
+        color: black;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        border: none;
+        font-size: 1.2rem;
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .mobile-nav .btn-signing:hover {
+        background-color: white;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        background: none;
+        border: none;
+        color: #e7e7e7;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    /* MAIN CONTENT */
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: calc(100vh - 6rem);
+        padding-top: 6rem;
+    }
+
+    .content {
+        max-width: 40rem;
+        margin-left: 10%;
+        z-index: 999;
+    }
+
+    .tag-box {
+        position: relative;
+        width: 18rem;
+        height: 2.5rem;
+        border-radius: 50px;
+        background: linear-gradient(to right, #656565, #7f42a7, #6600c5, #5300a0, #757575, #656565);
+        background-size: 200%;
+        animation: animationGradient 2.5s linear infinite;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    @keyframes animationGradient {
+        to {
+            background-position: 200%;
+        }
+    }
+
+    .tag-box .tag {
+        position: absolute;
+        inset: 3px 3px 3px 3px;
+        background-color: black;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+
+    .tag-box .tag:hover {
+        color: #5300a0;
+    }
+
+    .content h1 {
+        font-size: 4rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        margin: 2rem 0;
+        line-height: 1.2;
+        text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
+    }
+
+    .description {
+        font-size: 1.2rem;
+        letter-spacing: 0.5em;
+        max-width: 35rem;
+        color: gray;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 3rem;
+    }
+
+    .btn-get-started {
+        text-decoration: none;
+        border: 1px solid #2a2a2a;
+        padding: 0.7rem 1.2rem;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        transition: background-color 0.2s ease;
+        color: inherit;
+    }
+
+    .btn-get-started:hover {
+        background-color: #1a1a1a;
+    }
+
+    .btn-signing-main {
+        text-decoration: none;
+        background-color: lightgray;
+        color: black;
+        padding: 0.6rem 2.5rem;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        transition: background-color 0.2s ease;
+    }
+
+    .btn-signing-main:hover {
+        background-color: gray;
+    }
+
+    .robot-3d {
+        position: absolute;
+        top: 0;
+        right: -20%;
+    }
+
+    /* Планшети та середні пристрої */
+    @media (max-width: 1300px) {
+        header {
+            padding: 1rem 2%;
+        }
+
+        .content {
+            margin-top: 5rem;
+        }
+
+        .robot-3d {
+            scale: 0.8;
+            top: -20%;
+            right: 2%;
+        }
+    }
+
+    /* Мобільні пристрої */
+    @media (max-width: 768px) {
+        header {
+            padding: 1rem 5%;
+            justify-content: space-between;
+        }
+
+        /* Показуємо кнопку мобільного меню */
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        /* Приховуємо звичайну навігацію на мобільних */
+        nav {
+            display: none;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        main {
+            padding-top: 5rem;
+        }
+
+        .content {
+            max-width: 90%;
+            margin-left: 5%;
+            margin-top: 2rem;
+        }
+
+        .tag-box {
+            width: 12rem;
+        }
+
+        .content h1 {
+            font-size: 2.5rem;
+        }
+
+        .description {
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+        }
+
+        .btn-get-started {
+            font-size: 0.9rem;
+            padding: 0.8rem 1.2rem;
+        }
+
+        .btn-signing-main {
+            font-size: 0.9rem;
+            padding: 0.8rem 2rem;
+        }
+
+        .robot-3d {
+            scale: 0.5;
+            top: -10%;
+            right: 0;
+        }
+    }
+
+    /* iPhone SE (320px) */
+    @media (max-width: 320px) {
+        header {
+            padding: 1rem 3%;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+        }
+
+        .content {
+            margin-top: 1rem;
+        }
+
+        .tag-box {
+            width: 9rem;
+            height: 2rem;
+        }
+
+        .content h1 {
+            font-size: 2rem;
+        }
+
+        .description {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+        }
+
+        .btn-get-started,
+        .btn-signing-main {
+            font-size: 0.7rem;
+            padding: 0.6rem 1rem;
+        }
+
+        .robot-3d {
+            scale: 0.4;
+            top: -5%;
+            right: 0;
+        }
+    }
+
+    /* iPad Mini / Galaxy Tab (768px–800px) */
+    @media (min-width: 769px) and (max-width: 800px) {
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        .content h1 {
+            font-size: 3rem;
+        }
+
+        .robot-3d {
+            scale: 0.6;
+        }
+    }
+
+    /* iPad 10.2", Android Tab 10" */
+    @media (min-width: 801px) and (max-width: 1024px) {
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        .content h1 {
+            font-size: 3.5rem;
+        }
+
+        .robot-3d {
+            scale: 0.7;
+        }
+    }
+
+    /* Ноутбуки 1025px–1280px */
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        .container {
+            max-width: 95%;
+        }
+    }
+
+    /* Стандартні ноутбуки 1366px */
+    @media (max-width: 1366px) and (min-width: 1281px) {
+        .container {
+            max-width: 90%;
+            margin: auto;
+        }
+    }
+
+    /* Full HD і вище (1440p–1920p) */
+    @media (min-width: 1367px) {
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+    }
+  </style>
 </head>
 <body>
   <img src="gradient.png" alt="gradient" class="image-gradient">
@@ -15,14 +487,30 @@
   <div class="container">
     <header>
       <h1 data-aos="fade-down" data-aos-duration="1500" class="logo">MCODE</h1>
+      
+      <!-- Звичайна навігація для десктопу -->
       <nav>
         <li><a data-aos="fade-down" data-aos-duration="1500" href="#">COMPANY</a></li>
         <li><a data-aos="fade-down" data-aos-duration="2000" href="#">FEATURES</a></li>
         <li><a data-aos="fade-down" data-aos-duration="2500" href="#">RESOURCES</a></li>
         <li><a data-aos="fade-down" data-aos-duration="3000" href="#">DOCS</a></li>
       </nav>
+      
       <button data-aos="fade-down" data-aos-duration="1700" class="btn-signing">SIGNING</button>
+      
+      <!-- Кнопка для мобільного меню -->
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
     </header>
+
+    <!-- Мобільне меню -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="close-menu" onclick="toggleMobileMenu()">×</button>
+      <a href="#" onclick="toggleMobileMenu()">COMPANY</a>
+      <a href="#" onclick="toggleMobileMenu()">FEATURES</a>
+      <a href="#" onclick="toggleMobileMenu()">RESOURCES</a>
+      <a href="#" onclick="toggleMobileMenu()">DOCS</a>
+      <span class="btn-signing" onclick="toggleMobileMenu()">SIGNING</span>
+    </div>
 
     <main>
       <div class="content">
@@ -62,10 +550,33 @@
   </div>
 
   <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.33/build/spline-viewer.js"></script>
-
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  
   <script>
     AOS.init();
+
+    function toggleMobileMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.classList.toggle('active');
+    }
+
+    // Закриваємо мобільне меню при кліку поза ним
+    document.addEventListener('click', function(event) {
+        const mobileNav = document.getElementById('mobileNav');
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        
+        if (!mobileNav.contains(event.target) && !menuToggle.contains(event.target)) {
+            mobileNav.classList.remove('active');
+        }
+    });
+
+    // Закриваємо мобільне меню при зміні розміру екрану
+    window.addEventListener('resize', function() {
+        const mobileNav = document.getElementById('mobileNav');
+        if (window.innerWidth > 768) {
+            mobileNav.classList.remove('active');
+        }
+    });
   </script>
 
 </body>
