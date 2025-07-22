@@ -1,1 +1,539 @@
-hreffffffff
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump Starter</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Jump Starter</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="shop.html">Магазин</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header/Banner Section -->
+        <header class="hero">
+            <div class="hero-content">
+                <h1>NSKCDH Jump Starter<br>8000mAh</h1>
+                <p>Портативний пусковий пристрій для вашого автомобіля</p>
+                <a href="#" class="cta-button" onclick="openOrderModal('product1')">Купити зараз</a>
+            </div>
+            <div class="quick-specs">
+                <ul>
+                    <li>🔋 Ємність акумулятора: 8000 mAh</li>
+                    <li>⚡ Пусковий струм: 300A</li>
+                    <li>⚡ Піковий струм: 600A</li>
+                    <li>🚗 Підходить для двигунів до 3.5L</li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- Benefits Section -->
+        <section class="benefits-bg">
+            <div class="container">
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Потужний старт</h3>
+                        <p>Швидкий запуск розрядженого акумулятора до 7 разів на одному заряді</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-compress-alt"></i>
+                        <h3>Компактний дизайн</h3>
+                        <p>Ультралегка та портативна конструкція розміром всього 21х12х6 см</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-car"></i>
+                        <h3>Універсальність</h3>
+                        <p>Підходить для всіх автомобілів з 12В акумулятором</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Features -->
+        <section class="features">
+            <div class="container">
+                <h2>Характеристики продукту</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>Основні характеристики:</h3>
+                        <ul>
+                            <li>🔋 Ємність акумулятора: 8000 mAh</li>
+                            <li>⚡ Пусковий струм: 300A</li>
+                            <li>⚡ Піковий струм: 600A</li>
+                            <li>🚗 Підходить для двигунів до 3.5L</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Технічні характеристики:</h3>
+                        <ul>
+                            <li>USB вихід: 5V/2.1A</li>
+                            <li>Type C вихід: 5V/2A</li>
+                            <li>Час повної зарядки: близько 3.5 годин</li>
+                            <li>Робоча температура: від -15°C до +65°C</li>
+                            <li>Розміри: 210x120x60 mm</li>
+                            <li>Вага: 570 g</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Додаткові функції:</h3>
+                        <ul>
+                            <li>LED дисплей для відображення статусу</li>
+                            <li>Вбудований LED ліхтарик з 3 режимами роботи</li>
+                            <li>USB порт для зарядки смартфонів та планшетів</li>
+                            <li>Швидка зарядка в 1.8 рази швидше за звичайні зарядні пристрої</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Gallery -->
+        <section class="gallery">
+            <div class="container">
+                <h2>Галерея продукту</h2>
+                <div class="carousel-container">
+                    <button class="carousel-button prev">&lt;</button>
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="images/NSKCDH1.jpg" alt="Jump Starter Basic 1" onclick="openImage(this)">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/NSKCDH2.jpg" alt="Jump Starter Basic 2" onclick="openImage(this)">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/NSKCDH3.jpg" alt="Jump Starter Basic 3" onclick="openImage(this)">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/NSKCDH4.jpg" alt="Jump Starter Basic 4" onclick="openImage(this)">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/NSKCDH5.jpg" alt="Jump Starter Basic 5" onclick="openImage(this)">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/NSKCDH6.jpg" alt="Jump Starter Basic 6" onclick="openImage(this)">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/NSKCDH7.jpg" alt="Jump Starter Basic 7" onclick="openImage(this)">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/NSKCDH8.jpg" alt="Jump Starter Basic 8" onclick="openImage(this)">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="images/NSKCDH9.jpg" alt="Jump Starter Basic 9" onclick="openImage(this)">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-button next">&gt;</button>
+                    <div class="carousel-nav">
+                        <div class="carousel-indicator active"></div>
+                        <div class="carousel-indicator"></div>
+                        <div class="carousel-indicator"></div>
+                        <div class="carousel-indicator"></div>
+                        <div class="carousel-indicator"></div>
+                        <div class="carousel-indicator"></div>
+                        <div class="carousel-indicator"></div>
+                        <div class="carousel-indicator"></div>
+                        <div class="carousel-indicator"></div>
+                        <div class="carousel-indicator"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Modal -->
+        <div id="myModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); overflow: hidden;">
+            <span id="closeBtn" style="position: absolute; right: 35px; top: 15px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000;">&times;</span>
+            <div id="imageContainer" style="width: 100%; height: 100%; overflow: hidden; position: relative;">
+                <img id="modalImg" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%; cursor: grab; user-select: none; -webkit-user-drag: none;" onmousedown="startDragging(event)" ondragstart="return false;">
+            </div>
+        </div>
+
+        <script>
+            let isDragging = false;
+            let currentX;
+            let currentY;
+            let initialX;
+            let initialY;
+            let scale = 1;
+            let offsetX = 0;
+            let offsetY = 0;
+
+            // Показати модальне вікно
+            function showImage(img) {
+                const modal = document.getElementById("myModal");
+                const modalImg = document.getElementById("modalImg");
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                resetZoom();
+            }
+
+            // Закрити модальне вікно
+            function closeModal() {
+                const modal = document.getElementById("myModal");
+                modal.style.display = "none";
+                resetZoom();
+            }
+
+            // Скидання зуму
+            function resetZoom() {
+                scale = 1;
+                offsetX = 0;
+                offsetY = 0;
+                updateTransform();
+            }
+
+            // Оновлення трансформації
+            function updateTransform() {
+                const img = document.getElementById("modalImg");
+                img.style.transform = `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px)) scale(${scale})`;
+            }
+
+            // Зум колесом миші
+            document.getElementById("imageContainer").addEventListener("wheel", function(e) {
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? -0.2 : 0.2;
+                const newScale = Math.min(Math.max(1, scale + delta), 4);
+                
+                if (newScale !== scale) {
+                    // Позиція миші відносно зображення
+                    const rect = document.getElementById("modalImg").getBoundingClientRect();
+                    const mouseX = e.clientX - rect.left;
+                    const mouseY = e.clientY - rect.top;
+
+                    // Розрахунок нового зміщення
+                    if (newScale > scale) {
+                        offsetX = offsetX - (mouseX - rect.width/2) * 0.1;
+                        offsetY = offsetY - (mouseY - rect.height/2) * 0.1;
+                    } else {
+                        offsetX = offsetX * newScale/scale;
+                        offsetY = offsetY * newScale/scale;
+                    }
+
+                    scale = newScale;
+                    updateTransform();
+                }
+            });
+
+            // Переміщення зображення
+            function startDragging(e) {
+                if (scale > 1) {
+                    isDragging = true;
+                    initialX = e.clientX - offsetX;
+                    initialY = e.clientY - offsetY;
+                    document.getElementById("modalImg").style.cursor = "grabbing";
+                }
+            }
+
+            document.addEventListener("mousemove", function(e) {
+                if (isDragging && scale > 1) {
+                    e.preventDefault();
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                    offsetX = currentX;
+                    offsetY = currentY;
+                    updateTransform();
+                }
+            });
+
+            document.addEventListener("mouseup", function() {
+                if (isDragging) {
+                    isDragging = false;
+                    document.getElementById("modalImg").style.cursor = "grab";
+                }
+            });
+
+            // Закриття модального вікна
+            document.getElementById("closeBtn").addEventListener("click", closeModal);
+            document.getElementById("myModal").addEventListener("click", function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+            document.addEventListener("keydown", function(e) {
+                if (e.key === "Escape") {
+                    closeModal();
+                }
+            });
+        </script>
+
+        <!-- Modal Order Form -->
+        <div class="modal" id="orderModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Оформлення замовлення</h2>
+                <div class="product-details">
+                    <p id="modalProductName"></p>
+                    <p>Ціна: <span id="modalProductPrice"></span></p>
+                </div>
+                <form id="orderForm" class="order-form">
+                    <input type="hidden" id="productName">
+                    <input type="hidden" id="productPrice">
+                    <div class="form-group">
+                        <label for="name">Ім'я:</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="0991234567" required>
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Кількість:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                        <span class="error-message" id="quantityError"></span>
+                    </div>
+                    <div class="total-price">
+                        <p>Загальна сума: <span id="modalTotalPrice"></span></p>
+                    </div>
+                    <button type="submit" class="submit-btn">Замовити</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Contacts Section -->
+        <section id="contacts" class="section contacts-section">
+            <div class="container">
+                <h2>Контакти</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>Andrii.tsiupiak-ak2202@kep.nung.edu.ua</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <h3>Графік роботи</h3>
+                        <p>Щоденно: 8:00 - 22:00</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-truck"></i>
+                        <h3>Доставка</h3>
+                        <p>Безкоштовна доставка від 2000 грн</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Залиште заявку</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Ім'я:</label>
+                            <input type="text" id="contactName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Телефон:</label>
+                            <input type="tel" id="contactPhone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Повідомлення:</label>
+                            <textarea id="contactMessage" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Надіслати</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Section -->
+        <section id="shop" class="section shop-section">
+            <div class="container">
+                <h2>Наші продукти</h2>
+                <div class="shop-filters">
+                    <select class="filter-select">
+                        <option value="default">За замовчуванням</option>
+                        <option value="price-low">Від дешевих до дорогих</option>
+                        <option value="price-high">Від дорогих до дешевих</option>
+                        <option value="popular">За популярністю</option>
+                    </select>
+                    <select class="filter-select">
+                        <option value="all">Всі категорії</option>
+                        <option value="basic">Базові моделі</option>
+                        <option value="pro">Професійні моделі</option>
+                        <option value="premium">Преміум моделі</option>
+                    </select>
+                </div>
+                
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card" data-product-id="product1">
+                        <div class="product-badge new">Новинка</div>
+                        <div class="product-image">
+                            <img src="images/NSKCDH1.jpg" alt="NSKCDH Jump Starter">
+                            <div class="product-actions">
+                                <button class="action-button" onclick="openProductModal('product1')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-button" onclick="openOrderModal('product1')">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>NSKCDH Jump Starter<br>8000mAh</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.0)</span>
+                            </div>
+                            <p class="product-description">Портативний пусковий пристрій на 8000mAh для двигунів до 3.5L</p>
+                            <div class="product-price">
+                                <span class="current-price">1689 грн</span>
+                            </div>
+                            <button class="buy-button" onclick="location.href='index.html'">Детальніше</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card" data-product-id="product2">
+                        <div class="product-badge popular">Топ продажів</div>
+                        <div class="product-image">
+                            <img src="images/Master ALI1.webp" alt="Master ALI 1210A">
+                            <div class="product-actions">
+                                <button class="action-button" onclick="openProductModal('product2')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-button" onclick="openOrderModal('product2')">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Master ALI 1210A<br>250Ah</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                            <p class="product-description">Професійний зарядний пристрій на 250Ah з функцією запуску двигуна</p>
+                            <div class="product-price">
+                                <span class="current-price">1185 грн</span>
+                            </div>
+                            <button class="buy-button" onclick="location.href='master-ali.html'">Детальніше</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card" data-product-id="product3">
+                        <div class="product-badge sale">-20%</div>
+                        <div class="product-image">
+                            <img src="images/KS JS-1000 1.webp" alt="KS JS-1000">
+                            <div class="product-actions">
+                                <button class="action-button" onclick="openProductModal('product3')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-button" onclick="openOrderModal('product3')">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>KS JS-1000<br>12000mAh</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.5)</span>
+                            </div>
+                            <p class="product-description">Професійний пусковий пристрій на 12000mAh з розширеними можливостями</p>
+                            <div class="product-price">
+                                <span class="current-price">3696 грн</span>
+                            </div>
+                            <button class="buy-button" onclick="location.href='jumpstarter-pro.html'">Детальніше</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews">
+            <div class="container">
+                <h2>Відгуки покупців</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="review-text">"Відмінний пристрій! Завів машину при -15°C. Заряду вистачає на 4-5 запусків, потім потрібно підзаряджати."</p>
+                        <p class="review-author">- Віктор М.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="review-text">"Купила для чоловіка, він дуже задоволений. Якісна збірка, гарний дизайн. Ліхтарик теж дуже корисний."</p>
+                        <p class="review-author">- Марія В.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Дуже компактний і потужний пристрій. Врятував мене вже двічі за цю зиму. Особливо подобається функція Power Bank."</p>
+                        <p class="review-author">- Олександр К.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-info">
+                        <h3>Доставка</h3>
+                        <p>Безкоштовна доставка від 2000 грн</p>
+                        <p>Доставка по всій Україні</p>
+                    </div>
+                    <div class="footer-info">
+                        <h3>Jump Starter</h3>
+                        <p>Портативні пускові пристрої для вашого автомобіля</p>
+                        <p>Email: Andrii.tsiupiak-ak2202@kep.nung.edu.ua</p>
+                        <p>Графік роботи: 8:00 - 22:00</p>
+                    </div>
+                    <div class="footer-order">
+                        <button class="cta-button" onclick="openOrderModal('product1')">Замовити зараз</button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+    </div>
+</body>
+</html>
+
